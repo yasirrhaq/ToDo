@@ -1,5 +1,6 @@
 const express = require('express');
 const todoController = require('./controllers/todoController');
+const path = require('path');
 const app = express();
 
 //set up template engine
@@ -15,3 +16,5 @@ todoController(app)
 app.listen(3000, () => {
     console.log("Listening to port 3000");
 });
+
+app.set('views', path.join(__dirname, 'views'));

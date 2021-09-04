@@ -8,8 +8,9 @@
     <title>To Do List</title>
     <script src="https://code.jquery.com/jquery-1.12.4.js"
         integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU=" crossorigin="anonymous">
-    </script>
+        </script>
     <link rel="stylesheet" href="assets/stylesheet.css">
+    <script type="text/javascript" src="assets/todo-list.js"></script>
 </head>
 
 <body>
@@ -19,11 +20,12 @@
             <input type="text" name="item" placeholder="Add new item..." required>
             <button type="submit">Add item</button>
         </form>
-
         <ul>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
+            <% todos.forEach((todo)=> { %>
+                <li>
+                    <%= todo.item %>
+                </li>
+                <% }) %>
         </ul>
     </div>
 </body>
